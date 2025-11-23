@@ -65,26 +65,6 @@ def parse_sections(data):
 	
 	return chunks
 
-
-def chunk_sections(sections):
-	chunked_sections = []
-
-	for index, section in enumerate(sections, start=1):
-		count = len(section)
-		title = section.split(":")[0] if ":" in section else "Unknown"
-
-		if count > 100:
-			print(f"Section {index} ({title}): {count} chars - Chunking needed")
-			text_splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=20)
-			chunks = text_splitter.split_text(section)
-			chunked_sections.append(chunks)
-		else:
-			print(f"Section {index} ({title}): {count} chars - No chunking needed")
-			chunked_sections.append(section)
-
-	return chunked_sections
-
-
 def get_most_similar(similarity_tensor, chunks):
 	# Convert tensor to numpy array and get the first row (since it's 2D)
 	scores = similarity_tensor[0].numpy() if hasattr(similarity_tensor[0], 'numpy') else similarity_tensor[0]
