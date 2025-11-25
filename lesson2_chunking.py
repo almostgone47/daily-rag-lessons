@@ -1,8 +1,6 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from helpers import load_resume_data, parse_sections
 
-# # load resume data
-# resume_data = load_resume_data()
 
 def chunk_structured_list(items, section_type):
     """
@@ -125,6 +123,10 @@ def chunk_section(section):
         return chunk_structured_list(items, section_type)
     
     return []
+	
+
+# # load resume data
+resume_data = load_resume_data()
 
 # Test chunking on all sections
 all_chunks = []
