@@ -1,20 +1,21 @@
 from diskcache import Cache
-from helpers import model, load_resume_data
-from lesson2_chunking import chunk_section
 import hashlib
 import numpy as np
+
+from helpers import model, load_resume_data
+from lesson2_chunking import chunk_section
 
 # Initialize diskcache for embedding cache
 embedding_cache = Cache('./embedding_cache')
 
-# Load resume data and create chunks
-resume_data = load_resume_data()
+# # Load resume data and create chunks
+# resume_data = load_resume_data()
 
-# Generate all chunks from resume
-all_chunks = []
-for section in resume_data.get("sections", []):
-    chunks = chunk_section(section)
-    all_chunks.extend(chunks)
+# # Generate all chunks from resume
+# all_chunks = []
+# for section in resume_data.get("sections", []):
+#     chunks = chunk_section(section)
+#     all_chunks.extend(chunks)
 
 def generate_embeddings(chunks, use_cache=True):
 	"""
@@ -63,6 +64,7 @@ def setup_vector_store(chunks, embeddings):
 	vector_store["chunks"] = chunks
 	vector_store["embeddings"] = embeddings
 	vector_store["ids"] = [f'chunk_{i}' for i in range(len(chunks))]
+	return vector_store
 
 def query_vector_store(query_text, top_k=3):
 	"""
@@ -96,7 +98,6 @@ def query_vector_store(query_text, top_k=3):
 	
 	return results
 
-
 def get_cached_embedding(chunk_text):
 	"""Get embedding from cache if it exists."""
 	chunk_hash = hashlib.md5(chunk_text.encode()).hexdigest()
@@ -107,10 +108,10 @@ def save_embedding_to_cache(chunk_text, embedding):
 	chunk_hash = hashlib.md5(chunk_text.encode()).hexdigest()
 	embedding_cache.set(chunk_hash, embedding.tolist() if hasattr(embedding, 'tolist') else embedding)
 
-embeddings = generate_embeddings(all_chunks)
-setup_vector_store(all_chunks, embeddings)
-results = query_vector_store("How many years of experience do I have?")
+# embeddings = generate_embeddings(all_chunks)
+# setup_vector_store(all_chunks, embeddings)
+# results = query_vector_store("How many years of experience do I have?")
 
-print(results)
-print(f"Total chunks to embed: {len(all_chunks)}")
+# print(results)
+# print(f"Total chunks to embed: {len(all_chunks)}")
 

@@ -1,4 +1,5 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 from helpers import load_resume_data, parse_sections
 
 
@@ -123,20 +124,20 @@ def chunk_section(section):
         return chunk_structured_list(items, section_type)
     
     return []
-	
 
-# # load resume data
-resume_data = load_resume_data()
+def get_all_chunks(resume_data):
+	all_chunks = []
+	for section in resume_data.get("sections", []):
+		chunks = chunk_section(section)
+		all_chunks.extend(chunks)
+	return all_chunks
 
-# Test chunking on all sections
-all_chunks = []
-for section in resume_data.get("sections", []):
-    chunks = chunk_section(section)
-    all_chunks.extend(chunks)
+# # # load resume data
+# resume_data = load_resume_data()
 
-print(f"Total chunks created: {len(all_chunks)}")
-print("\nFirst few chunks:")
-for i, chunk in enumerate(all_chunks[:3], 1):
-    print(f"\nChunk {i}:")
-    print(f"  Text: {chunk['chunk'][:100]}...")
-    print(f"  Metadata: {chunk['metadata']}")
+# print(f"Total chunks created: {len(all_chunks)}")
+# print("\nFirst few chunks:")
+# for i, chunk in enumerate(all_chunks[:3], 1):
+#     print(f"\nChunk {i}:")
+#     print(f"  Text: {chunk['chunk'][:100]}...")
+#     print(f"  Metadata: {chunk['metadata']}")

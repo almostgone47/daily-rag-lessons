@@ -37,7 +37,7 @@ _COMPLETED_ ### Day 1: Document Loading & Basic Setup
 
 ---
 
-### Day 2: Text Chunking Strategies
+_COMPLETED_ ### Day 2: Text Chunking Strategies
 
 **Tasks**:
 
@@ -58,7 +58,7 @@ _COMPLETED_ ### Day 1: Document Loading & Basic Setup
 
 ---
 
-### Day 3: Embeddings & Vector Store Setup
+_COMPLETED_ ### Day 3: Embeddings & Vector Store Setup
 
 **Tasks**:
 
@@ -77,7 +77,7 @@ _COMPLETED_ ### Day 1: Document Loading & Basic Setup
 
 ---
 
-### Day 4: Basic Retrieval & Similarity Search
+_COMPLETED_ ### Day 4: Basic Retrieval & Similarity Search
 
 **Tasks**:
 
@@ -95,7 +95,7 @@ _COMPLETED_ ### Day 1: Document Loading & Basic Setup
 
 ---
 
-### Day 5: Advanced Chunking for Resumes
+_COMPLETED_ ### Day 5: Advanced Chunking for Resumes
 
 **Tasks**:
 

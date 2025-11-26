@@ -1,6 +1,8 @@
 
 from sentence_transformers import SentenceTransformer
+
 from helpers import load_resume_data, parse_sections, get_most_similar, ask_llm
+
 
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 

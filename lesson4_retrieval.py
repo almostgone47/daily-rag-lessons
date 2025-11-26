@@ -2,6 +2,7 @@ import string
 
 from lesson3_embeddings import query_vector_store
 
+
 def preprocess_query(query):
 	text = query.translate(str.maketrans('', '', string.punctuation))
 	return text.lower().strip()
@@ -31,6 +32,6 @@ def retrieval_pipeline(query, top_k=3, threshold=0.7):
 	return formatted
 
 
-query = preprocess_query("What are the candidate's technical skills?")
-results = retrieval_pipeline(query)
-print(results)
+# query = preprocess_query("What are the candidate's technical skills?")
+# results = retrieval_pipeline(query)
+# print(results)
