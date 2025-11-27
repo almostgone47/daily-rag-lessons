@@ -24,6 +24,10 @@ def chunk_structured_list(items, section_type):
             if item.get("startDate") or item.get("endDate"):
                 dates = f"({item.get('startDate', '')} to {item.get('endDate', '')})"
                 chunk_text_parts.append(dates)
+        # Skills handling
+        elif section_type.upper() == "SKILLS":
+            if item.get("headline"):
+                chunk_text_parts.append(f"Skills: {item.get('headline', '')}")
         else:
             # Generic structured list handling
             # Include relevant fields based on what's available
