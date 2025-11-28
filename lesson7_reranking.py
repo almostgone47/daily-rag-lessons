@@ -58,42 +58,42 @@ def rerank(query, search_results, reranker, context=None, top_k=5):
 	}
 
 # Test the reranking pipeline
-if __name__ == "__main__":
-	# Load and prepare data
-	print("Loading data...")
-	data = load_resume_data()
-	all_chunks = get_all_chunks(data)
-	embeddings = generate_embeddings(all_chunks)
-	vector_store = setup_vector_store(all_chunks, embeddings)
-	bm25_index = build_bm25_index(vector_store)
+# if __name__ == "__main__":
+# 	# Load and prepare data
+# 	print("Loading data...")
+# 	data = load_resume_data()
+# 	all_chunks = get_all_chunks(data)
+# 	embeddings = generate_embeddings(all_chunks)
+# 	vector_store = setup_vector_store(all_chunks, embeddings)
+# 	bm25_index = build_bm25_index(vector_store)
 	
-	# Setup reranker
-	print("Setting up reranker...")
-	reranker = setup_ranker()
+# 	# Setup reranker
+# 	print("Setting up reranker...")
+# 	reranker = setup_ranker()
 	
-	# Test query
-	query = "Python programming experience"
-	print(f"\nQuery: '{query}'")
-	print("=" * 60)
+# 	# Test query
+# 	query = "Python programming experience"
+# 	print(f"\nQuery: '{query}'")
+# 	print("=" * 60)
 	
-	# Stage 1: Hybrid search (retrieve top-20)
-	print("\nStage 1: Hybrid Search (top-20)...")
-	hybrid_results = hybrid_search(query, bm25_index, vector_store, top_k=20)
-	print(f"Retrieved {len(hybrid_results['documents'])} candidates")
+# 	# Stage 1: Hybrid search (retrieve top-20)
+# 	print("\nStage 1: Hybrid Search (top-20)...")
+# 	hybrid_results = hybrid_search(query, bm25_index, vector_store, top_k=20)
+# 	print(f"Retrieved {len(hybrid_results['documents'])} candidates")
 	
-	# Stage 2: Rerank to top-5
-	print("\nStage 2: Reranking (top-5)...")
-	reranked_results = rerank(query, hybrid_results, reranker, context="experience", top_k=5)
+# 	# Stage 2: Rerank to top-5
+# 	print("\nStage 2: Reranking (top-5)...")
+# 	reranked_results = rerank(query, hybrid_results, reranker, context="experience", top_k=5)
 	
-	# Print results
-	print("\nFinal Reranked Results:")
-	print("=" * 60)
-	for i, (doc, score, metadata) in enumerate(zip(
-		reranked_results["documents"],
-		reranked_results["scores"],
-		reranked_results["metadatas"]
-	), 1):
-		print(f"\n{i}. Score: {score:.4f}")
-		print(f"   Section: {metadata.get('section_type', 'N/A')}")
-		print(f"   Document: {doc}")
-		print("-" * 60)
+# 	# Print results
+# 	print("\nFinal Reranked Results:")
+# 	print("=" * 60)
+# 	for i, (doc, score, metadata) in enumerate(zip(
+# 		reranked_results["documents"],
+# 		reranked_results["scores"],
+# 		reranked_results["metadatas"]
+# 	), 1):
+# 		print(f"\n{i}. Score: {score:.4f}")
+# 		print(f"   Section: {metadata.get('section_type', 'N/A')}")
+# 		print(f"   Document: {doc}")
+# 		print("-" * 60)

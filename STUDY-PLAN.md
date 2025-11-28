@@ -136,7 +136,7 @@ _COMPLETED_ ### Day 6: Hybrid Search Implementation
 
 ---
 
-### Day 7: Reranking Implementation
+_COMPLETED_ ### Day 7: Reranking Implementation
 
 **Tasks**:
 
