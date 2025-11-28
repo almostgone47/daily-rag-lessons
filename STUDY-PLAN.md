@@ -115,7 +115,7 @@ _COMPLETED_ ### Day 5: Advanced Chunking for Resumes
 
 ---
 
-### Day 6: Hybrid Search Implementation
+_COMPLETED_ ### Day 6: Hybrid Search Implementation
 
 **Tasks**:
 
