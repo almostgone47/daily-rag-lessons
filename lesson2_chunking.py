@@ -130,6 +130,8 @@ def chunk_section(section):
     return []
 
 def get_all_chunks(resume_data):
+	if not resume_data or not isinstance(resume_data, dict):
+		raise ValueError("Invalid resume data: must be a non-empty dictionary")
 	all_chunks = []
 	for section in resume_data.get("sections", []):
 		chunks = chunk_section(section)

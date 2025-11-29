@@ -15,9 +15,14 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 
 def load_resume_data():
-	with open('resume.json', 'r') as f:
-		data = json.load(f)
-	return data
+	try:
+		with open('resume.json', 'r') as f:
+			data = json.load(f)
+		if not data:
+			raise ValueError("No data loaded")
+		return data
+	except Exception as e:
+		raise ValueError(f"Failed to load resume data: {e}")
 
 def parse_sections(data):
 	chunks = []

@@ -109,34 +109,46 @@ def merge_results(semantic_results, keyword_results, normalized_bm25_scores, nor
 	return merged_results
 
 def hybrid_search(query, bm25_index, vector_store, top_k=3, use_keyword_search=True):
+	if not query or not isinstance(query, str) or not query.strip():
+		raise ValueError("query must be a non-empty string")
+	if bm25_index is None:
+		raise ValueError("bm25_index cannot be None")
+	if vector_store is None:
+		raise ValueError("vector_store cannot be None")
+	if top_k <= 0:
+		raise ValueError("top_k must be greater than 0")
+
 	semantic_results = query_vector_store(query, top_k=top_k*2)
 	if not use_keyword_search:
 		return semantic_results
 	else:
-		# Step 1: Run both searches
-		keyword_results = keyword_search(query, bm25_index, vector_store, top_k)
-		# Step 2: Normalize scores
-		# Semantic: distances are 0-1, convert to similarity (1 - distance)
-		# BM25: normalize to 0-1 (divide by max, or use min-max scaling)
-		normalized_bm25_scores = normalize_bm25_scores(keyword_results)
-		normalized_semantic_scores = [1 - distance for distance in semantic_results["distances"]]
-		# Step 3: Merge results by chunk ID
-		# Use a dict: {chunk_id: {"semantic_score": ..., "keyword_score": ..., "document": ..., "metadata": ...}}
-		merged_results = merge_results(semantic_results, keyword_results, normalized_bm25_scores, normalized_semantic_scores)
-		# Step 4: Calculate combined scores
-		# combined_score = semantic_weight * semantic_score + keyword_weight * keyword_score
-		sorted_chunks = sorted(
-			merged_results.items(), 
-			key=lambda x: x[1]["combined_score"], 
-			reverse=True
-		)[:top_k]
-		# Step 5: Sort by combined_score (descending) and return top_k
-		return {
-			"ids": [chunk_id for chunk_id, _ in sorted_chunks],
-			"documents": [data["document"] for _, data in sorted_chunks],
-			"metadatas": [data["metadata"] for _, data in sorted_chunks],
-			"scores": [data["combined_score"] for _, data in sorted_chunks]
-		}
+		try:
+			# Step 1: Run both searches
+			keyword_results = keyword_search(query, bm25_index, vector_store, top_k)
+			# Step 2: Normalize scores
+			# Semantic: distances are 0-1, convert to similarity (1 - distance)
+			# BM25: normalize to 0-1 (divide by max, or use min-max scaling)
+			normalized_bm25_scores = normalize_bm25_scores(keyword_results)
+			normalized_semantic_scores = [1 - distance for distance in semantic_results["distances"]]
+			# Step 3: Merge results by chunk ID
+			# Use a dict: {chunk_id: {"semantic_score": ..., "keyword_score": ..., "document": ..., "metadata": ...}}
+			merged_results = merge_results(semantic_results, keyword_results, normalized_bm25_scores, normalized_semantic_scores)
+			# Step 4: Calculate combined scores
+			# combined_score = semantic_weight * semantic_score + keyword_weight * keyword_score
+			sorted_chunks = sorted(
+				merged_results.items(), 
+				key=lambda x: x[1]["combined_score"], 
+				reverse=True
+			)[:top_k]
+			# Step 5: Sort by combined_score (descending) and return top_k
+			return {
+				"ids": [chunk_id for chunk_id, _ in sorted_chunks],
+				"documents": [data["document"] for _, data in sorted_chunks],
+				"metadatas": [data["metadata"] for _, data in sorted_chunks],
+				"scores": [data["combined_score"] for _, data in sorted_chunks]
+			}
+		except Exception:
+			return semantic_results
 
 # Step 3: Test It
 # ---------------

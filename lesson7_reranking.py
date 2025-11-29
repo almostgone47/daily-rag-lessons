@@ -30,32 +30,35 @@ def should_rerank(search_results, confidence_threshold=0.7):
 	return False
 
 def rerank(query, search_results, reranker, context=None, top_k=5):
-	if not should_rerank(search_results):
+	try:
+		if not should_rerank(search_results):
+			return {
+				"ids": search_results["ids"][:top_k],
+				"documents": search_results["documents"][:top_k],
+				"metadatas": search_results["metadatas"][:top_k],
+				"scores": search_results["scores"][:top_k]
+			}
+		documents = search_results["documents"]
+		modified_query = get_modified_query(query, context)
+		pairs = [(modified_query, document) for document in documents]
+		scores = reranker.predict(pairs)
+		documents_with_scores = list(zip(
+			search_results["ids"],
+			search_results['metadatas'],
+			documents, 
+			scores
+		))
+		sorted_documents = sorted(documents_with_scores, key=lambda x: x[3], reverse=True)
+		top_k_zipped = sorted_documents[:top_k]
+		# Return in same format as hybrid_search
 		return {
-			"ids": search_results["ids"][:top_k],
-			"documents": search_results["documents"][:top_k],
-			"metadatas": search_results["metadatas"][:top_k],
-			"scores": search_results["scores"][:top_k]
+			"ids": [item[0] for item in top_k_zipped],
+			"documents": [item[2] for item in top_k_zipped],
+			"metadatas": [item[1] for item in top_k_zipped],
+			"scores": [item[3] for item in top_k_zipped]
 		}
-	documents = search_results["documents"]
-	modified_query = get_modified_query(query, context)
-	pairs = [(modified_query, document) for document in documents]
-	scores = reranker.predict(pairs)
-	documents_with_scores = list(zip(
-		search_results["ids"],
-		search_results['metadatas'],
-		documents, 
-		scores
-	))
-	sorted_documents = sorted(documents_with_scores, key=lambda x: x[3], reverse=True)
-	top_k_zipped = sorted_documents[:top_k]
-	# Return in same format as hybrid_search
-	return {
-		"ids": [item[0] for item in top_k_zipped],
-		"documents": [item[2] for item in top_k_zipped],
-		"metadatas": [item[1] for item in top_k_zipped],
-		"scores": [item[3] for item in top_k_zipped]
-	}
+	except Exception:
+		return search_results
 
 # Test the reranking pipeline
 # if __name__ == "__main__":

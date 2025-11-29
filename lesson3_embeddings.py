@@ -21,6 +21,11 @@ def generate_embeddings(chunks, use_cache=True):
 	"""
 	Generate embeddings for chunks, using cache to avoid re-embedding unchanged chunks.
 	"""
+	if chunks is None or not isinstance(chunks, (list, tuple)):
+		raise ValueError("Invalid chunks: must be a non-empty list or iterable")
+	if chunks and not isinstance(chunks[0], dict) or "chunk" not in chunks[0]:
+		raise ValueError("chunks must be a list of dicts with 'chunk' key")
+
 	embeddings = []
 	chunks_to_embed = []
 	chunk_indices = []
@@ -61,6 +66,13 @@ vector_store = {
 
 def setup_vector_store(chunks, embeddings):
 	"""Store chunks and embeddings in memory."""
+	if chunks is None or embeddings is None:
+		raise ValueError("chunks and embeddings cannot be None")
+	if not isinstance(chunks, list) or not isinstance(embeddings, list):
+		raise TypeError("chunks and embeddings must be lists")
+	if len(chunks) != len(embeddings):
+		raise ValueError(f"chunks ({len(chunks)}) and embeddings ({len(embeddings)}) must have the same length")
+
 	vector_store["chunks"] = chunks
 	vector_store["embeddings"] = embeddings
 	vector_store["ids"] = [f'chunk_{i}' for i in range(len(chunks))]
