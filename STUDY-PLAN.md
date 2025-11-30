@@ -9,6 +9,21 @@
 Optimization Agent that can analyze resumes, suggest improvements, and provide
 actionable feedback.
 
+**Teaching Methodology - Active Learning Approach**:
+
+- **Encourage incremental testing**: Build and test one component at a time, run
+  the program frequently to see results
+- **Use print statements**: Add print/logging statements in functions to observe
+  data flow, state changes, and intermediate results
+- **Learn from errors**: Run code often to see what breaks, understand why, and
+  fix iteratively
+- **Observe cause and effect**: See how changes affect output rather than just
+  following instructions
+- **Ask guiding questions**: Instead of giving direct solutions, ask questions
+  that help the learner discover the answer
+- **Test as you go**: Don't wait until everything is "complete" - test each
+  piece to understand how it works
+
 ---
 
 ## Phase 1: Mastery of Retrieval (Days 1-8)
@@ -158,7 +173,7 @@ _COMPLETED_ ### Day 7: Reranking Implementation
 
 ---
 
-### Day 8: Complete Retrieval System Integration
+_COMPLETED_ ### Day 8: Complete Retrieval System Integration
 
 **Tasks**:
 
@@ -185,7 +200,7 @@ _COMPLETED_ ### Day 7: Reranking Implementation
 
 **Focus**: LangGraph, State, Conditional Edges, and Human-in-the-Loop
 
-### Day 9: LangGraph Basics & State Management
+_COMPLETED_ ### Day 9: LangGraph Basics & State Management
 
 **Tasks**:
 

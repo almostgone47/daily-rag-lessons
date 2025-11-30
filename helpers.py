@@ -62,7 +62,41 @@ def parse_sections(data):
 				
 				chunks.append(exp_text)
 		
-		# Handle other section types (SKILLS, EDUCATION, etc.)
+		# Handle SKILLS sections
+		elif kind == 'SKILLS':
+			items = section.get('items', [])
+			skill_names = []
+			for item in items:
+				headline = item.get('headline', '').strip()
+				if headline:
+					skill_names.append(headline)
+			if skill_names:
+				chunks.append(f"{title}: {', '.join(skill_names)}")
+		
+		# Handle EDUCATION sections
+		elif kind == 'EDUCATION':
+			items = section.get('items', [])
+			for item in items:
+				headline = item.get('headline', '')  # School name
+				subheadline = item.get('subheadline', '')  # Degree
+				start_date = item.get('startDate', '')
+				end_date = item.get('endDate', '')
+				location = item.get('location', '')
+				
+				# Format the education chunk
+				edu_text = f"Education: {subheadline}" if subheadline else f"Education: {headline}"
+				if headline and subheadline:
+					edu_text += f" at {headline}"
+				elif headline:
+					edu_text = f"Education: {headline}"
+				if start_date or end_date:
+					edu_text += f" ({start_date} to {end_date})"
+				if location:
+					edu_text += f" - {location}"
+				
+				chunks.append(edu_text)
+		
+		# Handle other section types
 		else:
 			content = section.get('content', '')
 			if content:
@@ -91,14 +125,14 @@ def ask_llm(query, context_chunk):
 	This is the final step: query + retrieved context → LLM → answer
 	"""
 	# Build the RAG prompt
-	prompt = f"""Based on the following resume information, answer the question.
+	prompt = f"""Based on the following resume information, generate a professional resume summary.
 
 	Resume Context:
 	{context_chunk}
 
-	Question: {query}
+	Instructions: Write a concise 2-3 sentence professional summary in first person that highlights the candidate's experience, skills, and strengths. This text should be ready to copy and paste directly into a resume summary section. Write as if the candidate is describing themselves (use "I" or direct professional language). Do not use phrases like "The candidate is" or "This person has" - write it as the candidate would write it themselves.
 
-	Answer:"""
+	Professional Summary:"""
 		
 	# Call Groq API
 	completion = client.chat.completions.create(
