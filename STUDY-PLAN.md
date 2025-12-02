@@ -219,7 +219,7 @@ _COMPLETED_ ### Day 9: LangGraph Basics & State Management
 
 ---
 
-### Day 10: Conditional Edges & Routing
+_COMPLETED_ ### Day 10: Conditional Edges & Routing
 
 **Tasks**:
 
@@ -240,7 +240,7 @@ _COMPLETED_ ### Day 9: LangGraph Basics & State Management
 
 ---
 
-### Day 11: Parallel Node Execution
+_COMPLETED_ ### Day 11: Parallel Node Execution
 
 **Tasks**:
 

@@ -5,7 +5,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
+from typing import List
 
 # Load environment variables
 load_dotenv()
@@ -13,6 +13,57 @@ load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
+def load_job_description():
+    try:
+        with open('jobDescription.json', 'r') as f:
+            # The file appears to be plain text, not JSON
+            return f.read()
+    except Exception as e:
+        raise ValueError(f"Failed to load job description: {e}")
+
+def extract_keywords_from_job_description(job_description: str) -> List[str]:
+    """
+    Extract technical skills, technologies, and tools from a job description.
+    Returns a normalized list of keywords.
+    """
+    prompt = f"""Extract all technical skills, technologies, programming languages, 
+frameworks, tools, and platforms mentioned in this job description.
+
+Return ONLY a comma-separated list of keywords, normalized to common names.
+For example: "React.js" should be "React", "Node.js" should be "Node.js", etc.
+Do not include explanations or other text - just the comma-separated keywords.
+
+Job Description:
+{job_description}
+
+Keywords:"""
+    
+    try:
+        completion = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0.3,  # Lower temperature for more consistent extraction
+            max_tokens=200,   # Keywords should be short
+            stream=False
+        )
+        
+        response = completion.choices[0].message.content.strip()
+        
+        # Parse comma-separated response and clean up
+        keywords = [k.strip().lower() for k in response.split(",")]
+        # Remove empty strings and filter out any explanatory text
+        keywords = [k for k in keywords if k and len(k) < 50]  # Filter out long strings that might be explanations
+        
+        return keywords
+    except Exception as e:
+        # Fallback: return empty list if extraction fails
+        print(f"Keyword extraction failed: {e}")
+        return []
 
 def load_resume_data():
 	try:
@@ -24,9 +75,9 @@ def load_resume_data():
 	except Exception as e:
 		raise ValueError(f"Failed to load resume data: {e}")
 
-def parse_sections(data):
+def parse_sections(resume):
 	chunks = []
-	sections = data.get('sections', [])
+	sections = resume.get('sections', [])
 	
 	for section in sections:
 		kind = section.get('kind', '')
