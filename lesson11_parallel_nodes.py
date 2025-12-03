@@ -22,6 +22,9 @@ ResumeState = TypedDict("ResumeState", {
 	"ats_score": int,
 	"skill_gap_score": int,
 	"relevant_experience": str,
+	"user_decision": str,
+	"user_modifications": List[str],
+	"should_optimize": bool,
 	"analysis_times": Annotated[Dict[str, float], merge_dicts],
 	"errors": Annotated[List[str], add]
 	})

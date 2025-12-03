@@ -6,7 +6,8 @@
 (LangSmith) by building a **Resume Optimization Agent**.
 
 **Context**: All exercises will build toward a production-ready Resume
-Optimization Agent that can analyze resumes, suggest improvements, and provide
+Optimization Agent, for the app described in ./APP-SPEC.md in this same
+directory, that can analyze resumes, suggest improvements, and provide
 actionable feedback.
 
 **Teaching Methodology - Active Learning Approach**:
@@ -23,6 +24,33 @@ actionable feedback.
   that help the learner discover the answer
 - **Test as you go**: Don't wait until everything is "complete" - test each
   piece to understand how it works
+
+**When Introducing New Concepts (Worked Example Approach)**:
+
+For complex or unfamiliar concepts (e.g., LangGraph interrupts, new APIs,
+complex patterns):
+
+1. **Start with a minimal working example**: Show a simple, complete example
+   that demonstrates the concept
+2. **Explain each new piece**: Walk through what's new, what it does, and why
+   it's needed
+3. **Let them run it**: Have them run the example to see it work and observe the
+   behavior
+4. **Then apply to production**: Once they understand the concept, have them
+   implement it in their actual application
+5. **Use discovery learning for application**: When applying to their app, use
+   guiding questions and let them discover the implementation details
+
+**When Building on Known Concepts (Discovery Approach)**:
+
+For concepts they already understand or are extending:
+
+- Use guiding questions to help them discover the solution
+- Encourage experimentation and learning from errors
+- Let them figure out the implementation with your guidance
+
+**Balance**: Use worked examples for NEW concepts, discovery learning for
+APPLYING concepts.
 
 ---
 
