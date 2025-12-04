@@ -24,7 +24,6 @@ ResumeState = TypedDict("ResumeState", {
 	"relevant_experience": str,
 	"user_decision": str,
 	"user_modifications": List[str],
-	"should_optimize": bool,
 	"analysis_times": Annotated[Dict[str, float], merge_dicts],
 	"errors": Annotated[List[str], add]
 	})
@@ -235,6 +234,13 @@ def aggregate_analyses(state: ResumeState):
     Aggregates results from all parallel analyses.
     This node waits for all three analyses to complete before running.
     """
+	# TODO: Add section-specific scoring
+    # When optimizing a specific section, calculate:
+    # - Section-specific ATS match score
+    # - Section improvement percentage
+    # - Impact on overall resume score
+    # This will be used in guided mode for per-section optimization
+    
     try:
         # Combine all analysis times
         all_times = state.get("analysis_times", {})
