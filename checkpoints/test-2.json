@@ -1,0 +1,12 @@
+{
+  "values": {
+    "count": 1,
+    "step": "step_1"
+  },
+  "next": [],
+  "config": {
+    "configurable": {
+      "thread_id": "test-2"
+    }
+  }
+}

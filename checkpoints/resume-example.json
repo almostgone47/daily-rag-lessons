@@ -1,0 +1,1194 @@
+{
+  "values": {
+    "resume_data": {
+      "contact": {
+        "name": "John Smith",
+        "email": "john@email.com",
+        "phone": "503 789 1057",
+        "github": "github.com/johnnydev84",
+        "linkedin": "linkedin.com/john-smith",
+        "location": "Seattle, WA",
+        "portfolio": "john-portfolio.com"
+      },
+      "summary": "",
+      "version": 2,
+      "metadata": {
+        "lastModified": "2025-11-08T17:51:18.312Z",
+        "customizationLevel": "none"
+      },
+      "sections": [
+        {
+          "id": "section_1760322224760",
+          "kind": "RICHTEXT",
+          "items": [],
+          "order": 1,
+          "title": "Summary",
+          "content": "Full-stack software engineer with 3+ years of experience building React/Node.js applications. Strong in front-end architecture, UI/UX, and cloud deployment. Recently completed a Master's and Bachelor's in Computer Science with a minor in AI. Seeking to return to industry with updated technical expertise.",
+          "resumeId": "",
+          "template": "PARAGRAPH",
+          "createdAt": "2025-10-13T02:23:44.760Z",
+          "updatedAt": "2025-10-15T18:04:57.198Z",
+          "content_rich": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "Full-stack software engineer with 3+ years of experience building React/Node.js applications. Strong in front-end architecture, UI/UX, and cloud deployment. Recently completed a Master's and Bachelor's in Computer Science with a minor in AI. Seeking to return to industry with updated technical expertise.",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textFormat": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "section_1760374163660",
+          "kind": "EXPERIENCE",
+          "items": [
+            {
+              "id": "item_1760374163660",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "text": "Developed Shopify Hydrogen storefront for custom roof rack sales",
+                                "type": "text",
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "text": "Implemented dynamic filters, cart logic, Google Sheet integration, and multistep product selection",
+                                "type": "text",
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 3,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "text": "Started as internship, extended to paid contract",
+                                "type": "text",
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [],
+              "order": 0,
+              "bullets": [
+                "Developed Shopify Hydrogen storefront for custom roof rack sales",
+                "Implemented dynamic filters, cart logic, Google Sheet integration, and multistep product selection",
+                "Started as internship, extended to paid contract"
+              ],
+              "endDate": "2025-06",
+              "headline": "Software Engineer",
+              "location": "Remote",
+              "createdAt": "2025-10-13T16:49:23.660Z",
+              "sectionId": "section_1760374163660",
+              "startDate": "2025-01",
+              "updatedAt": "2025-10-15T18:14:46.522Z",
+              "subheadline": "Orion Van Gear",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Developed Shopify Hydrogen storefront for custom roof rack sales",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Implemented dynamic filters, cart logic, Google Sheet integration, and multistep product selection",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Started as internship, extended to paid contract",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_1760399584350",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Built internal HR/equipment portal (PHP/Laravel + AWS)",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Used AWS S3 for secure document and image storage",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 3,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Designed UIs with Material UI 5",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [],
+              "order": 1,
+              "bullets": [
+                "Built internal HR/equipment portal (PHP/Laravel + AWS)",
+                "Used AWS S3 for secure document and image storage",
+                "Designed UIs with Material UI 5"
+              ],
+              "endDate": "2023-01",
+              "headline": "Software Engineer",
+              "location": "Remote",
+              "createdAt": "2025-10-13T23:53:04.350Z",
+              "sectionId": "section_1760374163660",
+              "startDate": "2022-05",
+              "updatedAt": "2025-10-14T16:34:01.622Z",
+              "subheadline": "AJ Lucas",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Built internal HR/equipment portal (PHP/Laravel + AWS)",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Used AWS S3 for secure document and image storage",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Designed UIs with Material UI 5",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_1760399689169",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Built several React/TypeScript apps (CRA & Next.js) from InVision designs for DeFi staking pools",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Collaborated with frontend and smart contract developers to integrate blockchain functionality",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 3,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Integrated AlgoSigner browser wallet and smart contract functionality",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [],
+              "order": 2,
+              "bullets": [
+                "Built several React/TypeScript apps (CRA & Next.js) from InVision designs for DeFi staking pools",
+                "Collaborated with frontend and smart contract developers to integrate blockchain functionality",
+                "Integrated AlgoSigner browser wallet and smart contract functionality"
+              ],
+              "endDate": "2022-02",
+              "headline": "Frontend Engineer",
+              "location": "Remote/Sydney",
+              "createdAt": "2025-10-13T23:54:49.169Z",
+              "sectionId": "section_1760374163660",
+              "startDate": "2021-01",
+              "updatedAt": "2025-10-14T16:34:01.622Z",
+              "subheadline": "Yieldly",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Built several React/TypeScript apps (CRA & Next.js) from InVision designs for DeFi staking pools",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Collaborated with frontend and smart contract developers to integrate blockchain functionality",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Integrated AlgoSigner browser wallet and smart contract functionality",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_1760399952334",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Built and maintained logistics apps for Dubai and Saudi Arabia using React/Node.js",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Developed draggable table columns, persistent filters, and 30+ sortable fields",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 3,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Integrated NetSuite and Shopify APIs for live order tracking, label printing, and bulk CSV uploads",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [],
+              "order": 3,
+              "bullets": [
+                "Built and maintained logistics apps for Dubai and Saudi Arabia using React/Node.js",
+                "Developed draggable table columns, persistent filters, and 30+ sortable fields",
+                "Integrated NetSuite and Shopify APIs for live order tracking, label printing, and bulk CSV uploads"
+              ],
+              "endDate": "2021-01",
+              "headline": "Software Engineer",
+              "createdAt": "2025-10-13T23:59:12.334Z",
+              "sectionId": "section_1760374163660",
+              "startDate": "2020-08",
+              "updatedAt": "2025-10-14T16:34:01.622Z",
+              "subheadline": "Transcorp International",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Built and maintained logistics apps for Dubai and Saudi Arabia using React/Node.js",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Developed draggable table columns, persistent filters, and 30+ sortable fields",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Integrated NetSuite and Shopify APIs for live order tracking, label printing, and bulk CSV uploads",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_1760400043212",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Launched SaaS platform for hostel/hotel management (bookings, payments, finances)",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Led design & development using Figma",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [],
+              "order": 4,
+              "bullets": [
+                "Launched SaaS platform for hostel/hotel management (bookings, payments, finances)",
+                "Led design & development using Figma"
+              ],
+              "endDate": "2019-12",
+              "headline": "Founder & Developer",
+              "createdAt": "2025-10-14T00:00:43.212Z",
+              "sectionId": "section_1760374163660",
+              "startDate": "2016-07",
+              "updatedAt": "2025-10-14T16:34:01.622Z",
+              "subheadline": "HostelProfessional",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Launched SaaS platform for hostel/hotel management (bookings, payments, finances)",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Led design & development using Figma",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "order": 2,
+          "title": "Experience",
+          "resumeId": "",
+          "template": "EXPERIENCE_ROW",
+          "createdAt": "2025-10-13T16:49:23.660Z",
+          "updatedAt": "2025-10-15T18:14:46.522Z"
+        },
+        {
+          "id": "education",
+          "kind": "EDUCATION",
+          "items": [
+            {
+              "id": "edu1",
+              "tags": [],
+              "links": [],
+              "order": 0,
+              "bullets": [],
+              "endDate": "Jul 2024",
+              "headline": "Oregon State University",
+              "location": "Stanford, CA",
+              "startDate": "Jan 2023",
+              "updatedAt": "2025-10-15T15:46:27.260Z",
+              "subheadline": "Bachelor's of Science in Computer Science",
+              "bullets_rich": []
+            },
+            {
+              "id": "edu2",
+              "tags": [],
+              "links": [],
+              "order": 1,
+              "bullets": [],
+              "endDate": "Jun 2025",
+              "headline": "Oregon State University",
+              "location": "Berkeley, CA",
+              "startDate": "Sep 2024",
+              "updatedAt": "2025-10-15T15:46:27.260Z",
+              "subheadline": "Master of Engineering in Computer Science",
+              "bullets_rich": []
+            }
+          ],
+          "order": 3,
+          "title": "Education",
+          "content": "",
+          "template": "EDU_ROW",
+          "updatedAt": "2025-10-15T15:46:27.260Z"
+        },
+        {
+          "id": "section_1760369514149",
+          "kind": "SKILLS",
+          "meta": {
+            "showLevels": true
+          },
+          "items": [
+            {
+              "id": "item_1760369514149",
+              "meta": {
+                "level": "expert",
+                "level_num": 4
+              },
+              "tags": [],
+              "links": [],
+              "order": 0,
+              "bullets": [],
+              "headline": "React",
+              "createdAt": "2025-10-13T15:31:54.149Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T15:32:15.194Z"
+            },
+            {
+              "id": "item_1760369535914",
+              "meta": {
+                "level": "expert",
+                "level_num": 4
+              },
+              "tags": [],
+              "links": [],
+              "order": 1,
+              "bullets": [],
+              "headline": "Express/Node.js",
+              "createdAt": "2025-10-13T15:32:15.914Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:57:17.919Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399826509",
+              "meta": {
+                "level": "advanced",
+                "level_num": 3
+              },
+              "tags": [],
+              "links": [],
+              "order": 2,
+              "bullets": [],
+              "headline": "Ruby on Rails",
+              "createdAt": "2025-10-13T23:57:06.509Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:58:03.239Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399827722",
+              "meta": {
+                "level": "advanced",
+                "level_num": 3
+              },
+              "tags": [],
+              "links": [],
+              "order": 3,
+              "bullets": [],
+              "headline": "PHP/Laravel",
+              "createdAt": "2025-10-13T23:57:07.722Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:58:01.629Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399828347",
+              "meta": {
+                "level": "advanced",
+                "level_num": 3
+              },
+              "tags": [],
+              "links": [],
+              "order": 4,
+              "bullets": [],
+              "headline": "Python",
+              "createdAt": "2025-10-13T23:57:08.347Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:57:58.808Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399829813",
+              "meta": {
+                "level": "expert",
+                "level_num": 4
+              },
+              "tags": [],
+              "links": [],
+              "order": 5,
+              "bullets": [],
+              "headline": "MySQL",
+              "createdAt": "2025-10-13T23:57:09.813Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:57:40.089Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399861435",
+              "meta": {
+                "level": "expert",
+                "level_num": 4
+              },
+              "tags": [],
+              "links": [],
+              "order": 6,
+              "bullets": [],
+              "headline": "Postgress",
+              "createdAt": "2025-10-13T23:57:41.435Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-13T23:57:45.451Z",
+              "subheadline": ""
+            },
+            {
+              "id": "item_1760399868466",
+              "meta": {
+                "level": "expert",
+                "level_num": 4
+              },
+              "tags": [],
+              "links": [],
+              "order": 7,
+              "bullets": [],
+              "headline": "AWS",
+              "createdAt": "2025-10-13T23:57:48.466Z",
+              "sectionId": "section_1760369514149",
+              "updatedAt": "2025-10-15T16:17:15.679Z",
+              "subheadline": ""
+            }
+          ],
+          "order": 4,
+          "title": "Skills",
+          "resumeId": "",
+          "template": "SKILLS_GRID",
+          "createdAt": "2025-10-13T15:31:54.149Z",
+          "updatedAt": "2025-10-15T16:17:15.679Z"
+        },
+        {
+          "id": "section_1760545042748",
+          "kind": "PROJECT",
+          "items": [
+            {
+              "id": "item_1760545042748",
+              "meta": {
+                "entry_rich": {
+                  "root": {
+                    "type": "root",
+                    "format": "",
+                    "indent": 0,
+                    "version": 1,
+                    "children": [
+                      {
+                        "tag": "ul",
+                        "type": "list",
+                        "start": 1,
+                        "format": "",
+                        "indent": 0,
+                        "version": 1,
+                        "children": [
+                          {
+                            "type": "listitem",
+                            "value": 1,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "We built a cool app",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 2,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Then we sold the app",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          },
+                          {
+                            "type": "listitem",
+                            "value": 3,
+                            "format": "",
+                            "indent": 0,
+                            "version": 1,
+                            "children": [
+                              {
+                                "mode": "normal",
+                                "text": "Now we're in Thailand",
+                                "type": "text",
+                                "style": "",
+                                "detail": 0,
+                                "format": 0,
+                                "version": 1
+                              }
+                            ],
+                            "direction": "ltr"
+                          }
+                        ],
+                        "listType": "bullet",
+                        "direction": "ltr"
+                      }
+                    ],
+                    "direction": "ltr"
+                  }
+                }
+              },
+              "tags": [],
+              "links": [
+                "laundarybroth.com"
+              ],
+              "order": 0,
+              "bullets": [
+                "We built a cool app",
+                "Then we sold the app",
+                "Now we're in Thailand"
+              ],
+              "endDate": "Present",
+              "headline": "AWESOME Project",
+              "createdAt": "2025-10-15T16:17:22.748Z",
+              "sectionId": "section_1760545042748",
+              "startDate": "2025-01",
+              "updatedAt": "2025-10-15T20:21:49.276Z",
+              "subheadline": "Lead Dev",
+              "bullets_rich": [
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "We built a cool app",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Then we sold the app",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "root": {
+                    "type": "root",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "version": 1,
+                        "children": [
+                          {
+                            "text": "Now we're in Thailand",
+                            "type": "text",
+                            "version": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "order": 5,
+          "title": "Project",
+          "resumeId": "",
+          "template": "PROJECT_ROW",
+          "createdAt": "2025-10-15T16:17:22.748Z",
+          "updatedAt": "2025-10-15T20:21:49.276Z"
+        }
+      ],
+      "summary_rich": null
+    },
+    "job_description": "{\n  \"job_description\": \"About the job We are a digital agency that serves startups to Fortune 500 companies. Known for not just delivery and exceptional service, we are focused on serving with honesty and integrity. Position Overview We are seeking a skilled Fullstack Engineer to join our dynamic team. This role is pivotal in developing, maintaining, and enhancing our web applications using both front-end and back-end technologies. The ideal candidate will have a strong background in modern development practices and a passion for building scalable and efficient software solutions. Key Responsibilities Design, develop, and maintain high-quality web applications using Node.js and React. Write clean, maintainable code and create efficient APIs to connect front-end and back-end systems. Implement responsive user interfaces with a focus on user experience and accessibility. Utilize AWS services for application deployment, management, and scaling. Use Terraform for infrastructure as code, ensuring repeatable and reliable deployments. Collaborate with cross-functional teams to define, design, and ship new features. Troubleshoot, debug applications, and conduct peer code reviews to ensure high-quality output. Qualifications Proven experience as a Fullstack Engineer or similar role, with a strong portfolio of web applications. Proficiency in Node.js, REACT, TypeScript, and related technologies. Experience with cloud platforms, particularly AWS, and understanding of cloud architecture. Familiarity with infrastructure as code tools, especially Terraform. Strong understanding of RESTful APIs and web services. Excellent problem-solving skills and a keen attention to detail. Ability to work collaboratively in a team-oriented environment.\"\n}\n",
+    "ats_score": 0.75,
+    "skill_gap_score": 0.6,
+    "relevant_experience": "5 years of Python development...",
+    "extracted_skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "errors": [],
+    "analysis_times": {
+      "ats": 0.5,
+      "skill_gap": 0.3,
+      "experience": 1.2
+    },
+    "user_decision": "pending"
+  },
+  "next": [
+    "human_in_loop"
+  ],
+  "config": {
+    "configurable": {
+      "thread_id": "resume-123"
+    }
+  }
+}

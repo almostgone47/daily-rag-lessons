@@ -289,7 +289,7 @@ _COMPLETED_ ### Day 11: Parallel Node Execution
 
 ---
 
-### Day 12: Human-in-the-Loop Integration
+_COMPLETED_ ### Day 12: Human-in-the-Loop Integration
 
 **Tasks**:
 

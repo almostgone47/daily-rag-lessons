@@ -37,9 +37,11 @@ def prepare_documents_for_job(resume_id: str, job_id: str, graph):
 		"resume_data": resume_data,
 		"job_description": job_description
 	}
-# QUESTION WHY DO WE HARD CODE THREAD ID 1 HERE????????
+	# TODO: Replace hardcoded thread_id with unique identifier
+	# In production: Use f"{resume_id}_{job_id}" or f"{user_id}_{resume_id}_{job_id}"
+	# This ensures each resume customization session has its own checkpoint
 	# Create config with thread_id for checkpointing
-	config = {"configurable": {"thread_id": "1"}}
+	config = {"configurable": {"thread_id": "1"}}  # TODO: Use f"{resume_id}_{job_id}" in production
 	result = graph.invoke(initial_state, config=config)
 	current_state = graph.get_state(config=config)
 	# print("current_state.next???: ", current_state.next)
@@ -148,6 +150,20 @@ graph.add_edge("apply_suggestions", "parse_resume")  # Re-parse with new content
 graph.add_edge("aggregate_analyses", "human_in_loop")  # This creates the feedback loop
 graph.add_edge("error_handler", END)
 
+# TODO: Replace MemorySaver with Supabase-based checkpointer for production
+# MemorySaver only persists in memory - state is lost on server restart
+# For production, we need to:
+# 1. Create a custom checkpointer that saves to Supabase (PostgreSQL)
+# 2. Store workflow state in a table (e.g., `workflow_checkpoints`)
+# 3. Use thread_id = f"{resume_id}_{job_id}" to uniquely identify each session
+# 4. This enables workflow recovery: if server restarts, user can resume customization
+# 5. Only store checkpoints for active customization sessions (not all resumes)
+# 6. Clean up old checkpoints after workflow completes or times out
+# 
+# Benefits:
+# - Users can resume customization after server restart
+# - No need to store all resume data - only active workflow states
+# - State persists across deployments
 checkpointer = MemorySaver()
 # End after aggregation
 compiled_graph = graph.compile(checkpointer=checkpointer)
