@@ -92,16 +92,101 @@ def generate_suggestions(state: ResumeState):
 	}
 
 def apply_suggestions(state: ResumeState):
-	"""
-	Applies suggestions to the resume data.
-	For now, this is a placeholder - will implement actual modifications later.
-	"""
-	# TODO: Apply the suggestions from user_modifications to resume_data
-	# This should modify the resume_data structure with the optimized content
-	# For now, just pass through the resume_data
-	return {
-		"resume_data": state.get("resume_data"),
-	}
+    """
+    Applies suggestions to the resume data using an LLM to ensure structure is preserved.
+    """
+    print("\n🛠️  Applying suggestions to resume...")
+    
+    user_modifications = state.get("user_modifications", [])
+    resume_data = state.get("resume_data", {})
+    
+    if not user_modifications:
+        print("   No suggestions to apply.")
+        return {"resume_data": resume_data}
+
+    # In a real app, we might apply them one by one or let the user choose.
+    # Here, we'll apply all "safe" suggestions (which are in user_modifications after conflict resolution)
+    
+    import json
+    from groq import Groq
+    import os
+    
+    client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+    
+    # We'll target the specific sections mentioned in suggestions or just send the whole resume structure
+    # Sending the whole structure is safer for context but consumes more tokens.
+    # To avoid rate limits (TPM), we will only send the Experience section for optimization
+    # as most suggestions target that section.
+    
+    # Extract only the experience section to save tokens
+    sections = resume_data.get('sections', [])
+    experience_section = next((s for s in sections if s.get('kind') == 'EXPERIENCE'), None)
+    
+    if not experience_section:
+        print("   No experience section found to optimize.")
+        return {"resume_data": resume_data}
+        
+    # 1. Convert experience section to a string representation for the LLM
+    experience_str = json.dumps(experience_section, indent=2)
+    
+    prompt = f"""You are a JSON resume editor. Your task is to apply specific improvement suggestions to the Experience section of a resume.
+
+ORIGINAL EXPERIENCE SECTION JSON:
+{experience_str}
+
+SUGGESTIONS TO APPLY:
+{json.dumps(user_modifications, indent=2)}
+
+INSTRUCTIONS:
+1. Return the FULL updated Experience section JSON.
+2. Incorporate the suggestions into the items (bullets, descriptions).
+3. Maintain the exact same JSON structure/schema.
+4. Improve the content based on the suggestions (e.g., adding metrics, rewriting bullets).
+5. Do NOT add any markdown formatting (like ```json), just return the raw JSON string.
+
+UPDATED EXPERIENCE SECTION JSON:"""
+
+    try:
+        completion = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+            stream=False
+        )
+        
+        updated_json_str = completion.choices[0].message.content.strip()
+        
+        # Clean up if LLM added markdown
+        if updated_json_str.startswith("```json"):
+            updated_json_str = updated_json_str[7:]
+        if updated_json_str.startswith("```"):
+            updated_json_str = updated_json_str[3:]
+        if updated_json_str.endswith("```"):
+            updated_json_str = updated_json_str[:-3]
+            
+        updated_experience_section = json.loads(updated_json_str)
+        
+        # Merge back into full resume data
+        # Find index of experience section
+        for i, section in enumerate(resume_data['sections']):
+            if section.get('kind') == 'EXPERIENCE':
+                resume_data['sections'][i] = updated_experience_section
+                break
+        
+        print(f"   ✓ Successfully applied {len(user_modifications)} suggestions to resume data.")
+        
+        # Reset extracted_sections so they get re-parsed from the new data
+        return {
+            "resume_data": resume_data,
+            "extracted_sections": [], # Clear these so parse_resume regenerates them
+            "formatting_state": None, # Clear formatting state
+            "formatting_issues": None, # Clear validation
+            "conflicts_resolved": None # Clear conflict status
+        }
+        
+    except Exception as e:
+        print(f"   ❌ Failed to apply suggestions: {e}")
+        return {"errors": [f"Failed to apply suggestions: {str(e)}"]}
 
 def error_handler(state: ResumeState):
     print("Errors: ", state.get("errors"))
@@ -166,6 +251,7 @@ graph.add_edge("error_handler", END)
 # - State persists across deployments
 checkpointer = MemorySaver()
 # End after aggregation
-compiled_graph = graph.compile(checkpointer=checkpointer)
-graph_return = prepare_documents_for_job("123", "456", compiled_graph)
-# print("graph_return???: ", graph_return)
+if __name__ == "__main__":
+    compiled_graph = graph.compile(checkpointer=checkpointer)
+    graph_return = prepare_documents_for_job("123", "456", compiled_graph)
+    # print("graph_return???: ", graph_return)

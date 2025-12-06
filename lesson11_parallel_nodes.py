@@ -60,10 +60,16 @@ def parse_resume(state: ResumeState):
 				skill_items = section.get("items", [])
 				skills = [item.get("headline", "").strip() for item in skill_items if item.get("headline")]
 		
-		return {
+		result = {
 			"extracted_sections": sections,
 			"extracted_skills": skills,
 		}
+		# Preserve workflow_complete if it exists in state (for multi-agent workflow)
+		# This allows the workflow to know if we're showing results after optimization
+		workflow_complete_value = state.get("workflow_complete")
+		if workflow_complete_value is not None:
+			result["workflow_complete"] = workflow_complete_value
+		return result
 	except Exception as e:
 		return {"errors": [str(e)]}
 
@@ -274,25 +280,28 @@ def aggregate_analyses(state: ResumeState):
     except Exception as e:
         return {"errors": [f"Aggregation failed: {str(e)}"]}
 
-graph = StateGraph(ResumeState)
-graph.add_node("parse_resume", parse_resume)
-graph.add_node("check_ats_score", check_ats_score)
-graph.add_node("check_skill_gap_score", check_skill_gap_score)
-graph.add_node("check_relevant_experience", check_relevant_experience)
-graph.add_node("aggregate_analyses", aggregate_analyses)
-# Sequential: START -> parse_resume
-graph.add_edge(START, "parse_resume")
-# Parallel: All three analyses start after parse_resume
-graph.add_edge("parse_resume", "check_ats_score")
-graph.add_edge("parse_resume", "check_skill_gap_score")
-graph.add_edge("parse_resume", "check_relevant_experience")
-# All three feed into aggregation
-graph.add_edge("check_ats_score", "aggregate_analyses")
-graph.add_edge("check_skill_gap_score", "aggregate_analyses")
-graph.add_edge("check_relevant_experience", "aggregate_analyses")
+# Only compile and run if this file is executed directly (not imported)
+if __name__ == "__main__":
+    graph = StateGraph(ResumeState)
+    graph.add_node("parse_resume", parse_resume)
+    graph.add_node("check_ats_score", check_ats_score)
+    graph.add_node("check_skill_gap_score", check_skill_gap_score)
+    graph.add_node("check_relevant_experience", check_relevant_experience)
+    graph.add_node("aggregate_analyses", aggregate_analyses)
+    # Sequential: START -> parse_resume
+    graph.add_edge(START, "parse_resume")
+    # Parallel: All three analyses start after parse_resume
+    graph.add_edge("parse_resume", "check_ats_score")
+    graph.add_edge("parse_resume", "check_skill_gap_score")
+    graph.add_edge("parse_resume", "check_relevant_experience")
+    # All three feed into aggregation
+    graph.add_edge("check_ats_score", "aggregate_analyses")
+    graph.add_edge("check_skill_gap_score", "aggregate_analyses")
+    graph.add_edge("check_relevant_experience", "aggregate_analyses")
 
-# End after aggregation
-graph.add_edge("aggregate_analyses", END)
-compiled_graph = graph.compile()
-graph_return = prepare_documents_for_job("123", "456", compiled_graph)
-# print("graph_return???: ", graph_return)
+    # End after aggregation
+    graph.add_edge("aggregate_analyses", END)
+
+    compiled_graph = graph.compile()
+    graph_return = prepare_documents_for_job("123", "456", compiled_graph)
+    # print("graph_return???: ", graph_return)

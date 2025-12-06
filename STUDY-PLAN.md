@@ -308,7 +308,7 @@ _COMPLETED_ ### Day 12: Human-in-the-Loop Integration
 
 ---
 
-### Day 13: State Persistence & Workflow Recovery
+_COMPLETED_ ### Day 13: State Persistence & Workflow Recovery
 
 **Tasks**:
 
@@ -327,7 +327,7 @@ _COMPLETED_ ### Day 12: Human-in-the-Loop Integration
 
 ---
 
-### Day 14: Complex Multi-Agent Workflow
+_COMPLETED_ ### Day 14: Complex Multi-Agent Workflow
 
 **Tasks**:
 

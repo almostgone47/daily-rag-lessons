@@ -47,7 +47,7 @@ Keywords:"""
                     "content": prompt
                 }
             ],
-            temperature=0.3,  # Lower temperature for more consistent extraction
+            temperature=0,  # Zero temperature for deterministic extraction
             max_tokens=200,   # Keywords should be short
             stream=False
         )
