@@ -231,7 +231,7 @@ def generate_suggestions_for_section(state: ResumeState) -> Dict[str, Any]:
     # Extract section content for context
     section_title = target_section.get("title", current_section)
     section_content = target_section.get("content", "")
-    
+    # A LIMIT OF 3 JOBS NEEDS TO BE INCREASED
     # For Experience sections, include items
     if section_kind == "EXPERIENCE":
         items = target_section.get("items", [])
